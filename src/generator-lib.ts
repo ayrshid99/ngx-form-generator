@@ -51,6 +51,8 @@ function makeFieldsBody(definition: Definition): string[] {
 
     return allOfFieldsBody;
   }
+  if(!definition.properties)
+    return {};
   const fields = Object.keys(definition.properties);
   const fieldsBody = fields.map(fieldName => makeField(fieldName, definition)).filter(item => item !== '');
 
